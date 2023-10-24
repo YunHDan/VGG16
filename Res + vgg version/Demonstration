@@ -7,5 +7,5 @@
   The new model, it takes 943 seconds in the same 20 epoch, and gets 92% accuracy.
   To be honest, my experience depend on one RTX 3050.
   For complete model, 40 epoch need 1883 seconds, however, the accuracy reaches 96%.
-  It is important to note that add resnet's idea into vgg may make the training speed lower or the accuracy lower, but the most significant contribution is that 
+  It is important to note that adding resnet's idea into vgg may make the training speed lower or the accuracy lower, but the most significant contribution is that 
 we can make sure our net would not occur weight explosion or weight disappear.
