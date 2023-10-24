@@ -3,7 +3,7 @@ I add the idea of resnet into vgg model.
 What needed to be noted is that vgg_resnet_train is very similar to my_vgg_train, just has a difference in epoch.
 In my_vgg_train, epoch is 20, because the epoch is enough to train a complete weight param.
 In vgg_resnet_train, epoch is 30 or 40, even 50, which is decided by yourself.But in my computer, i choose 40.
-In contrast, old vgg model for train needs 921 seconds in 20 epoch, and gets 94% accuracy.
+In contrast, old vgg model for train needs 921 seconds in 20 epoch, and gets 93% accuracy.
 The new model, it just takes 946 seconds in the same 20 epoch, and gets 92% accuracy.
 To be honest, my experience depend on one RTX 3050.
 For complete model, 40 epoch need 1883 seconds, however, the accuracy can reach 96%.
