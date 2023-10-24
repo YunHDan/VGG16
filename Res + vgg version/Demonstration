@@ -6,4 +6,4 @@ In vgg_resnet_train, epoch is 30 or 40, even 50, which is decided by yourself.Bu
 In contrast, old vgg model for train needs ......minutes in 20 epoch, and gets ...... accuracy.
 However, in my new model, it just takes 946.5819034576416 seconds in the same 20 epoch, and gets 92% accuracy.
 To be honest, my experience depend on one RTX 3050.
-For complete model, 40 epoch need ......minutes, however, the accuracy can reach ......, which is old model cannot beat.
+For complete model, 40 epoch need 1883.2481775283813 seconds, however, the accuracy can reach 96%, which is old model cannot beat.
