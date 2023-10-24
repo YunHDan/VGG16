@@ -15,7 +15,7 @@ class VGG(nn.Module):
             nn.ReLU(),
             nn.BatchNorm2d(64),
 
-            nn.MaxPool2d(kernel_size=2, stride=1),
+            nn.MaxPool2d(kernel_size=2, stride=2),
 
             nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
@@ -71,7 +71,7 @@ class VGG(nn.Module):
         )
 
         self.classifer = nn.Sequential(
-            nn.Linear(in_features=512 * 7 * 7, out_features=4096),
+            nn.Linear(in_features=512, out_features=4096),
             nn.ReLU(),
             nn.Linear(in_features=4096, out_features=4096),
             nn.ReLU(),
@@ -80,7 +80,7 @@ class VGG(nn.Module):
 
     def forward(self, input):
         output1 = self.model(input)
-        output1 = torch.flatten(output1)
+        output1 = torch.reshape(output1, (64, -1))
         output2 = self.classifer(output1)
         return output2
 
