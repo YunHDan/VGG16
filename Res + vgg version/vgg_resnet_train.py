@@ -37,7 +37,7 @@ optim = torch.optim.SGD(vgg.parameters(), learning_rate)
 
 #   设置训练步骤
 train_step = 0
-epoch = 30
+epoch = 40
 
 begin = time.time()
 #   开始一轮训练
