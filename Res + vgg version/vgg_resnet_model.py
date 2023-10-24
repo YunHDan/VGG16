@@ -70,8 +70,12 @@ class VGG(nn.Module):
         self.block6 = nn.Sequential(
             nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, padding=1, stride=1),
             nn.BatchNorm2d(512),
+        )
+        self.block6_relu = nn.Sequential(
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
+        )
+        self.block7 = nn.Sequential(
             nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, padding=1, stride=1),
             nn.BatchNorm2d(512),
             nn.ReLU(),
@@ -81,7 +85,7 @@ class VGG(nn.Module):
             nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, padding=1, stride=1),
             nn.BatchNorm2d(512),
         )
-        self.block6_relu = nn.Sequential(
+        self.block7_relu = nn.Sequential(
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
         )
@@ -113,12 +117,13 @@ class VGG(nn.Module):
         X6 = self.block52(X5)
         X6 += X5
         X6 = self.block5_relu(X6)
-        # torch.Size([64, 512, 4, 4])
         X7 = self.block6(X6)
-        # torch.Size([64, 512, 2, 2])
-        # X7 += X6
+        X7 += X6
         X7 = self.block6_relu(X7)
-        return X7
+        X8 = self.block7(X7)
+        X8 += X7
+        X8 = self.block7_relu(X8)
+        return X8
 
     def forward(self, input):
         output1 = self.BLOCK(input)
