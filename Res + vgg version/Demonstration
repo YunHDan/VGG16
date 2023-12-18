@@ -9,3 +9,13 @@
   For complete model, 40 epoch need 1883 seconds, however, the accuracy reaches 96%.
   It is important to note that adding resnet's idea into vgg may make the training speed lower or the accuracy lower, but the most significant contribution is that 
 we can make sure our net would not occur weight explosion or weight disappear.
+
+这是一个VGG的新版本。我在VGG模型中加入了ResNet的思想。
+
+需要注意的是，vgg_resnet_train与my_vgg_train非常相似，只是在epoch上有所区别。在my_vgg_train中，epoch设置为20，因为20个epoch足够训练出完整的权重参数。而在vgg_resnet_train中，epoch设置为30、40，甚至50，具体取决于个人选择。在我的电脑上，我选择了40个epoch。
+
+相比之下，旧版本的VGG模型在20个epoch内需要921秒，准确率为93%。而新版本的模型，在相同的20个epoch内需要943秒，准确率为92%。
+
+老实说，我的经验是基于一块RTX 3050。对于完整的模型，40个epoch需要1883秒，然而准确率达到了96%。
+
+重要的是要注意，将ResNet的思想融入VGG可能会使训练速度变慢或准确率降低，但最显著的贡献是我们可以确保我们的网络不会发生权重爆炸或权重消失
